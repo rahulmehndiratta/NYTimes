@@ -8,13 +8,13 @@
 
 import Foundation
 
-/// This is the parsing of json json
+/// This is the parsing of json 
 extension Data {
-    func parseData(options:JSONSerialization.ReadingOptions? = nil) throws -> [String: Any]  {
+    func getJson(options:JSONSerialization.ReadingOptions? = nil) throws -> [String: Any]  {
         let options = options ?? JSONSerialization.ReadingOptions(rawValue: 0)
-        guard let array = try JSONSerialization.jsonObject(with: self, options: options) as? [String:Any] else {
+        guard let dictData = try JSONSerialization.jsonObject(with: self, options: options) as? [String:Any] else {
             return [:]
         }
-        return array
+        return dictData
     }
 }

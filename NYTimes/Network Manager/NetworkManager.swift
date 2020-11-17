@@ -71,7 +71,7 @@ class NetworkManager {
                 return
             } else if let data = data {
                 do {
-                    let json = try data.parseData()
+                    let json = try data.getJson()
                     if json.keys.contains("fault") {
                         responseCallback(NetworkResponse<T>.init(json: [:], result: .failure(.requestFailure(message: Strings.SERVER_KEY_ERROR))))
                         return

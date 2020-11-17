@@ -87,7 +87,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="byLineLabel" destination="fYZ-qE-0dm" id="YFJ-IC-bEo"/>
+                <outlet property="byLineLabel" destination="m3K-is-XKl" id="OF0-n8-dq2"/>
                 <outlet property="imageItem" destination="Ozm-Pv-78U" id="GTI-OL-HQV"/>
                 <outlet property="timeStemp" destination="qHO-w2-gO7" id="7T3-Bb-4oo"/>
                 <outlet property="titleLabel" destination="fYZ-qE-0dm" id="FkJ-PE-ztV"/>
@@ -97,6 +97,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="schedule" width="21" height="24"/>
+        <image name="schedule" width="20" height="23.5"/>
     </resources>
 </document>

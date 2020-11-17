@@ -26,7 +26,7 @@ class AppUtility {
     }
     
     class func getRootCtrl() -> UIViewController? {
-        var ctrl = UIApplication.shared.keyWindow?.rootViewController
+        var ctrl = UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController
         while ctrl?.presentedViewController != nil {
             ctrl = ctrl?.presentedViewController
         }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseVC {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -62,6 +62,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NYNewsTableCell.ID, for: indexPath) as! NYNewsTableCell
         cell.populateData(news: self.viewModel.item(atIndexPath: indexPath))
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
     

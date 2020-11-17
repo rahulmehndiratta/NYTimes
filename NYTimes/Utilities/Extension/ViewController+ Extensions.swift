@@ -12,14 +12,14 @@ extension UIViewController{
     func showProgressView(onWindow: Bool) {
         let frame = onWindow ? UIScreen.main.bounds : view.bounds
         let progressView = ProgressView(frame: frame)
-        onWindow ? UIApplication.shared.keyWindow?.addSubview(progressView) : view.addSubview(progressView)
+        onWindow ? UIApplication.shared.windows.first { $0.isKeyWindow }?.addSubview(progressView) : view.addSubview(progressView)
     }
     
     func hideProgressView() {
         DispatchQueue.main.async { [weak self] in
             if let progressView = self?.view.subviews.first(where: { $0.isKind(of: ProgressView.self)}) {
                 progressView.removeFromSuperview()
-            } else if let progressView = UIApplication.shared.keyWindow?.subviews.first(where: { $0.isKind(of: ProgressView.self)})  {
+            } else if let progressView = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.subviews.first(where: { $0.isKind(of: ProgressView.self)})  {
                 progressView.removeFromSuperview()
             }
         }
